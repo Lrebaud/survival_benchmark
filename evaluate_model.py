@@ -5,6 +5,7 @@ from glob import glob
 from datetime import datetime
 from tqdm import tqdm
 import sys
+import os
 
 def evaluate_model_on_dataset(model, dataset):
     try:
@@ -39,7 +40,9 @@ def evaluate_model(model):
 if __name__ == '__main__':
 
     ray.shutdown()
-    ray.init(log_to_driver=False)
+    ray.init(log_to_driver=False, )
+    
+    os.makedirs('results', exist_ok=True)
     
     model = sys.argv[1]
     evaluate_model(model)

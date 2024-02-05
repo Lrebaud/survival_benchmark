@@ -1,6 +1,8 @@
 import scipy
 from sksurv.linear_model import CoxnetSurvivalAnalysis, CoxPHSurvivalAnalysis, IPCRidge
-from sklearn.utils.fixes import loguniform
+# from sklearn.utils.fixes import loguniform
+from scipy.stats import loguniform
+
 from fast_ICARE import IcareSurvival, BaggedIcareSurvival
 from sksurv.tree import SurvivalTree
 import numpy as np
